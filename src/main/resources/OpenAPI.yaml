@@ -1,0 +1,773 @@
+openapi: 3.0.3
+info:
+  title: WebServices
+  description: WebServices - LEBARBANCHON Valentin, LEMOINE Julien, KELER Lucas
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8080'
+tags:
+  - name: Author
+    description: Author management
+  - name: Book
+    description: Book management
+  - name: BorrowedBy
+    description: BorrowedBy management
+  - name: Publisher
+    description: Publisher management
+  - name: WrittenBy
+    description: WrittenBy management
+paths:
+  /authors:
+    get:
+      tags:
+        - Author
+      summary: Get all authors
+      operationId: getAuthors
+      responses:
+        '200':
+          description: List of authors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Author'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Author
+      summary: Delete all authors
+      operationId: deleteAuthors
+      responses:
+        '200':
+          description: All authors deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /author:
+    get:
+      tags:
+        - Author
+      summary: Get an author
+      operationId: getAuthor
+      parameters:
+        - name: authorId
+          in: query
+          description: Author Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Author
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Author
+      summary: Create an author
+      operationId: createAuthor
+      requestBody:
+        description: Author to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        '200':
+          description: Author created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+        - Author
+      summary: Update an author
+      operationId: updateAuthor
+      requestBody:
+        description: Author to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Author'
+      responses:
+        '200':
+          description: Author updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Author
+      summary: Delete an author
+      operationId: deleteAuthor
+      parameters:
+        - name: authorId
+          in: query
+          description: Author Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Author deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /books:
+    get:
+      tags:
+        - Book
+      summary: Get all books
+      operationId: getBooks
+      responses:
+        '200':
+          description: List of books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Book
+      summary: Delete all books
+      operationId: deleteBooks
+      responses:
+        '200':
+          description: All books deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /book:
+    get:
+      tags:
+        - Book
+      summary: Get a book
+      operationId: getBook
+      parameters:
+        - name: bookId
+          in: query
+          description: Book Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Book
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Book
+      summary: Create a book
+      operationId: createBook
+      requestBody:
+        description: Book to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '200':
+          description: Book created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+        - Book
+      summary: Update a book
+      operationId: updateBook
+      requestBody:
+        description: Book to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '200':
+          description: Book updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Book
+      summary: Delete a book
+      operationId: deleteBook
+      parameters:
+        - name: bookId
+          in: query
+          description: Book Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Book deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /borrowedBys:
+    get:
+      tags:
+        - BorrowedBy
+      summary: Get all borrowedBys
+      operationId: getBorrowedBys
+      responses:
+        '200':
+          description: List of borrowedBys
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BorrowedBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - BorrowedBy
+      summary: Delete all borrowedBys
+      operationId: deleteBorrowedBys
+      responses:
+        '200':
+          description: All borrowedBys deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /borrowedBy:
+    get:
+      tags:
+        - BorrowedBy
+      summary: Get a borrowedBy
+      operationId: getBorrowedBy
+      parameters:
+        - name: borrowedById
+          in: query
+          description: BorrowedBy Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: BorrowedBy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BorrowedBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - BorrowedBy
+      summary: Create a borrowedBy
+      operationId: createBorrowedBy
+      requestBody:
+        description: BorrowedBy to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BorrowedBy'
+      responses:
+        '200':
+          description: BorrowedBy created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BorrowedBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+        - BorrowedBy
+      summary: Update a borrowedBy
+      operationId: updateBorrowedBy
+      requestBody:
+        description: BorrowedBy to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BorrowedBy'
+      responses:
+        '200':
+          description: BorrowedBy updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BorrowedBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - BorrowedBy
+      summary: Delete a borrowedBy
+      operationId: deleteBorrowedBy
+      parameters:
+        - name: borrowedById
+          in: query
+          description: BorrowedBy Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: BorrowedBy deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /publishers:
+    get:
+      tags:
+        - Publisher
+      summary: Get all publishers
+      operationId: getPublishers
+      responses:
+        '200':
+          description: List of publishers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Publisher'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Publisher
+      summary: Delete all publishers
+      operationId: deletePublishers
+      responses:
+        '200':
+          description: All publishers deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /publisher:
+    get:
+      tags:
+        - Publisher
+      summary: Get a publisher
+      operationId: getPublisher
+      parameters:
+        - name: publisherId
+          in: query
+          description: Publisher Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Publisher
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Publisher'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - Publisher
+      summary: Create a publisher
+      operationId: createPublisher
+      requestBody:
+        description: Publisher to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Publisher'
+      responses:
+        '200':
+          description: Publisher created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Publisher'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+        - Publisher
+      summary: Update a publisher
+      operationId: updatePublisher
+      requestBody:
+        description: Publisher to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Publisher'
+      responses:
+        '200':
+          description: Publisher updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Publisher'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - Publisher
+      summary: Delete a publisher
+      operationId: deletePublisher
+      parameters:
+        - name: publisherId
+          in: query
+          description: Publisher Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Publisher deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /writtenBys:
+    get:
+      tags:
+        - WrittenBy
+      summary: Get all writtenBys
+      operationId: getWrittenBys
+      responses:
+        '200':
+          description: List of writtenBys
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WrittenBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - WrittenBy
+      summary: Delete all writtenBys
+      operationId: deleteWrittenBys
+      responses:
+        '200':
+          description: All writtenBys deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /writtenBy:
+    get:
+      tags:
+        - WrittenBy
+      summary: Get a writtenBy
+      operationId: getWrittenBy
+      parameters:
+        - name: writtenById
+          in: query
+          description: WrittenBy Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: WrittenBy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrittenBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - WrittenBy
+      summary: Create a writtenBy
+      operationId: createWrittenBy
+      requestBody:
+        description: WrittenBy to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WrittenBy'
+      responses:
+        '200':
+          description: WrittenBy created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrittenBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      tags:
+        - WrittenBy
+      summary: Update a writtenBy
+      operationId: updateWrittenBy
+      requestBody:
+        description: WrittenBy to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WrittenBy'
+      responses:
+        '200':
+          description: WrittenBy updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrittenBy'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+        - WrittenBy
+      summary: Delete a writtenBy
+      operationId: deleteWrittenBy
+      parameters:
+        - name: writtenById
+          in: query
+          description: WrittenBy Id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: WrittenBy deleted
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+    Author:
+      type: object
+      properties:
+        authorId:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+    Book:
+      type: object
+      properties:
+        bookId:
+          type: integer
+        bookName:
+          type: string
+        publisher:
+          type: object
+          properties:
+            publisherId:
+              type: integer
+            publisherName:
+              type: string
+    BorrowedBy:
+      type: object
+      properties:
+        borrowedById:
+          type: integer
+        userId:
+          type: integer
+        startDate:
+          type: string
+          format: date
+        endDate:
+            type: string
+            format: date
+        duration:
+          type: integer
+        book:
+          type: object
+          properties:
+            bookId:
+              type: integer
+            bookName:
+              type: string
+            publisher:
+              type: object
+              properties:
+                publisherId:
+                  type: integer
+                publisherName:
+                  type: string
+    Publisher:
+      type: object
+      properties:
+        publisherId:
+          type: integer
+        publisherName:
+          type: string
+    WrittenBy:
+      type: object
+      properties:
+        writtenById:
+          type: integer
+        author:
+          type: object
+          properties:
+            authorId:
+              type: integer
+            firstName:
+              type: string
+            lastName:
+              type: string
+        book:
+          type: object
+          properties:
+            bookId:
+              type: integer
+            bookName:
+              type: string
+            publisher:
+              type: object
+              properties:
+                publisherId:
+                  type: integer
+                publisherName:
+                  type: string

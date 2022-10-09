@@ -1,0 +1,1044 @@
+{
+	"info": {
+		"_postman_id": "5e0837a1-c896-4bd6-917f-1cd05f33499e",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Get Authors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{author}}s",
+							"host": [
+								"{{basePath}}{{author}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Authors",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{author}}s",
+							"host": [
+								"{{basePath}}{{author}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{author}}?authorId=3",
+							"host": [
+								"{{basePath}}{{author}}"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Author",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Honoré\",\n    \"lastName\": \"De Balzac\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{author}}",
+							"host": [
+								"{{basePath}}{{author}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Author",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}/{{author}}?authorId=2",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"{{author}}"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Author",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"authorId\": 3,\n    \"firstName\": \"Honoré\",\n    \"lastName\": \"De Balzac\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{author}}",
+							"host": [
+								"{{basePath}}{{author}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{book}}s",
+							"host": [
+								"{{basePath}}{{book}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Books",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{book}}s",
+							"host": [
+								"{{basePath}}{{book}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{book}}?bookId=2",
+							"host": [
+								"{{basePath}}{{book}}"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookName\": \"Le petit Prince\",\n    \"publisher\": {\n        \"publisherId\": 1\n    },\n    \"bookMark\": \"9783140464079\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{book}}",
+							"host": [
+								"{{basePath}}{{book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{book}}?bookId=2",
+							"host": [
+								"{{basePath}}{{book}}"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\": 2,\n    \"bookName\": \"Le père Goriot\",\n    \"publisher\": {\n        \"publisherId\": 1,\n        \"publisherName\": \"Classiques Pocket\"\n    },\n    \"bookMark\": \"2266197177\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{book}}",
+							"host": [
+								"{{basePath}}{{book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AvailableBooks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{book}}/available",
+							"host": [
+								"{{basePath}}{{book}}"
+							],
+							"path": [
+								"available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnavailableBooks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{book}}/unavailable",
+							"host": [
+								"{{basePath}}{{book}}"
+							],
+							"path": [
+								"unavailable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BorrowedBy",
+			"item": [
+				{
+					"name": "Get BorrowedBys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{borrowedBy}}s",
+							"host": [
+								"{{basePath}}{{borrowedBy}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete BorrowedBys",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{borrowedBy}}s",
+							"host": [
+								"{{basePath}}{{borrowedBy}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get BorrowedBy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{borrowedBy}}?borrowedById=3",
+							"host": [
+								"{{basePath}}{{borrowedBy}}"
+							],
+							"query": [
+								{
+									"key": "borrowedById",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post BorrowedBy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"startDate\":\"2022-10-04\",\n    \"duration\": 10,\n    \"book\": {\n        \"bookId\": 2,\n        \"bookName\": \"Le père Goriot\",\n        \"publisher\": {\n            \"publisherId\": 1,\n            \"publisherName\": \"Classiques Pocket\"\n        },\n        \"bookMark\": \"2266197177\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{borrowedBy}}",
+							"host": [
+								"{{basePath}}{{borrowedBy}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete BorrowedBy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{borrowedBy}}?borrowedById=3",
+							"host": [
+								"{{basePath}}{{borrowedBy}}"
+							],
+							"query": [
+								{
+									"key": "borrowedById",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put BorrowedBy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"borrowedById\": 4,\n    \"userId\": 2,\n    \"book\": {\n        \"bookId\": 2,\n        \"bookName\": \"Le père Goriot\",\n        \"publisher\": {\n            \"publisherId\": 1,\n            \"publisherName\": \"Classiques Pocket\"\n        },\n        \"bookMark\": \"2266197177\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{borrowedBy}}",
+							"host": [
+								"{{basePath}}{{borrowedBy}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get BorrowedByUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get BorrowedByBook",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{borrowedBy}}/book?bookId=1",
+							"host": [
+								"{{basePath}}{{borrowedBy}}"
+							],
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publisher",
+			"item": [
+				{
+					"name": "Get Publishers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{publisher}}s",
+							"host": [
+								"{{basePath}}{{publisher}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Publishers",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{publisher}}s",
+							"host": [
+								"{{basePath}}{{publisher}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Publishers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{publisher}}?publisherId=1",
+							"host": [
+								"{{basePath}}{{publisher}}"
+							],
+							"query": [
+								{
+									"key": "publisherId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Publisher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"publisherName\": \"Hachette\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{publisher}}",
+							"host": [
+								"{{basePath}}{{publisher}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Publisher",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{publisher}}?publisherId=2",
+							"host": [
+								"{{basePath}}{{publisher}}"
+							],
+							"query": [
+								{
+									"key": "publisherId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Publisher",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"publisherId\": 1,\n    \"publisherName\": \"Classiques Pocket\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{publisher}}",
+							"host": [
+								"{{basePath}}{{publisher}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPublishedBooks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{publisher}}/books?publisherId=1",
+							"host": [
+								"{{basePath}}{{publisher}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "publisherId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WrittenBy",
+			"item": [
+				{
+					"name": "Get WrittenBys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}s",
+							"host": [
+								"{{basePath}}{{writtenBy}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete WrittenBys",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}s",
+							"host": [
+								"{{basePath}}{{writtenBy}}s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WrittenBy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}?writtenById=1",
+							"host": [
+								"{{basePath}}{{writtenBy}}"
+							],
+							"query": [
+								{
+									"key": "writtenById",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post WrittenBy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": {\n        \"authorId\": 4,\n        \"firstName\": \"Honoré\",\n        \"lastName\": \"De Balzac\"\n    },\n    \"book\": {\n        \"bookId\": 2,\n        \"bookName\": \"Le père Goriot\",\n        \"publisher\": {\n            \"publisherId\": 1,\n            \"publisherName\": \"Classiques Pocket\"\n        },\n        \"bookMark\": \"2266197177\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}",
+							"host": [
+								"{{basePath}}{{writtenBy}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete WrittenBy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}?writtenById=2",
+							"host": [
+								"{{basePath}}{{writtenBy}}"
+							],
+							"query": [
+								{
+									"key": "writtenById",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put WrittenBy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": {\n        \"authorId\": 4,\n        \"firstName\": \"Honoré\",\n        \"lastName\": \"De Balzac\"\n    },\n    \"book\": {\n        \"bookId\": 2,\n        \"bookName\": \"Le père Goriot\",\n        \"publisher\": {\n            \"publisherId\": 1,\n            \"publisherName\": \"Classiques Pocket\"\n        },\n        \"bookMark\": \"2266197177\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}",
+							"host": [
+								"{{basePath}}{{writtenBy}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WrittenByAuthor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}/author?authorId=4",
+							"host": [
+								"{{basePath}}{{writtenBy}}"
+							],
+							"path": [
+								"author"
+							],
+							"query": [
+								{
+									"key": "authorId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get WrittenByBook",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorization}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{basePath}}{{writtenBy}}/book?bookId=3",
+							"host": [
+								"{{basePath}}{{writtenBy}}"
+							],
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "basePath",
+			"value": "http://localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "publisher",
+			"value": "/publisher"
+		},
+		{
+			"key": "author",
+			"value": "/author"
+		},
+		{
+			"key": "book",
+			"value": "/book"
+		},
+		{
+			"key": "writtenBy",
+			"value": "/writtenBy",
+			"type": "default"
+		},
+		{
+			"key": "borrowedBy",
+			"value": "/borrowedBy"
+		},
+		{
+			"key": "user",
+			"value": "/user",
+			"type": "default"
+		},
+		{
+			"key": "authorization",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInVzZXJSb2xlIjoiQURNSU5JU1RSQVRPUiIsImxvZ2luIjoiYWRtaW5pc3RyYXRvciIsImlhdCI6MTY2NDg3OTE2NCwiZXhwIjoxNjc3ODgwOTY0fQ.M3k13gQqBTnshkF0PB2EryNWCAsOtLwU4qlEV_jwn6Y",
+			"type": "default"
+		}
+	]
+}

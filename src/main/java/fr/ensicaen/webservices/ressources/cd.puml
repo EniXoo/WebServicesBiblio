@@ -1,0 +1,51 @@
+@startuml
+Class Author{
+    - {static} id : UUID
+    - name : String
+}
+
+Class Book{
+    - {static} id : UUID
+    - idPublisher : UUID
+    - name : String
+    - cote : String
+}
+
+Class WrittenBy{
+    - {static} id : UUID
+    - idAuthor : UUID
+    - idBook : UUID
+}
+
+
+Class BorrowedBy{
+    - {static} id : UUID
+    - userId : UUID
+    - bookId : UUID
+    - startDate : Date
+    - returnDate : Date
+    - duration : Integer
+}
+
+Class User{
+    - {static} id : UUID
+    - login : String
+    - hashPasswd : String
+    - userRole : String
+    - firstName : String
+    - lastNAme : String
+    - phoneNumber : String
+    - address : String
+}
+
+Class Publisher{
+    - {static} id : UUID
+    - name : String
+}
+
+Author -- WrittenBy
+Book -- WrittenBy
+User -- BorrowedBy
+Book -- BorrowedBy
+Book -- Publisher
+@enduml
