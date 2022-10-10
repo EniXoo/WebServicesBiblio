@@ -1,1 +1,0 @@
-worker: java -jar build/libs/WebServices-0.0.1-SNAPSHOT-all.jar

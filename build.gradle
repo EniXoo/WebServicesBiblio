@@ -38,6 +38,6 @@ build.mustRunAfter test
 
 jar {
     manifest {
-        attributes 'Class-Path': '/libs/WebServices-1.0-SNAPSHOT-all.jar', 'Main-Class': 'fr.ensicaen.webservices.WebServicesApplication'
+        attributes 'Class-Path': 'libs/WebServices-1.0-SNAPSHOT-all.jar', 'Main-Class': 'fr.ensicaen.webservices.WebServicesApplication'
     }
 }
